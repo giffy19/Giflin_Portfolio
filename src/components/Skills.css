@@ -1,0 +1,334 @@
+/* Skills.css */
+.skills {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.skills-category-selector {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.category-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #495057;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+}
+
+.category-btn.active {
+  background: #3498db;
+  color: white;
+  border-color: #3498db;
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.category-btn i {
+  font-size: 1.1rem;
+}
+
+.skills-container {
+  min-height: 400px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.skill-item.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.circle-progress {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+  transition: stroke-dashoffset 1.5s ease-in-out;
+}
+
+.progress-ring-circle.animated {
+  animation: progress-load 1.5s ease-in-out forwards;
+}
+
+.progress-ring-circle-bg {
+  fill: #fff;
+}
+
+.circle-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.circle-content i {
+  font-size: 2rem;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+.percentage {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+}
+
+.percentage.animated {
+  animation: count-up 1.5s ease-in-out forwards;
+}
+
+.skill-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #495057;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Progress loading animation - FIXED to stop at correct percentage */
+@keyframes progress-load {
+  from {
+    stroke-dashoffset: 314; /* 2 * π * 50 (circumference) */
+  }
+  to {
+    stroke-dashoffset: calc(314 - (314 * var(--percentage) / 100));
+  }
+}
+
+/* Apply the correct percentage for each skill */
+.skill-item:nth-child(1) .progress-ring-circle.animated {
+  --percentage: 90;
+}
+.skill-item:nth-child(2) .progress-ring-circle.animated {
+  --percentage: 85;
+}
+.skill-item:nth-child(3) .progress-ring-circle.animated {
+  --percentage: 80;
+}
+.skill-item:nth-child(4) .progress-ring-circle.animated {
+  --percentage: 75;
+}
+.skill-item:nth-child(5) .progress-ring-circle.animated {
+  --percentage: 85;
+}
+.skill-item:nth-child(6) .progress-ring-circle.animated {
+  --percentage: 70;
+}
+
+/* For soft skills */
+.skills-category-selector ~ .skills-container > .skills-grid:nth-child(2) .skill-item:nth-child(1) .progress-ring-circle.animated {
+  --percentage: 90;
+}
+.skills-category-selector ~ .skills-container > .skills-grid:nth-child(2) .skill-item:nth-child(2) .progress-ring-circle.animated {
+  --percentage: 95;
+}
+.skills-category-selector ~ .skills-container > .skills-grid:nth-child(2) .skill-item:nth-child(3) .progress-ring-circle.animated {
+  --percentage: 80;
+}
+.skills-category-selector ~ .skills-container > .skills-grid:nth-child(2) .skill-item:nth-child(4) .progress-ring-circle.animated {
+  --percentage: 85;
+}
+
+/* Percentage count-up animation */
+@keyframes count-up {
+  from {
+    content: "0%";
+  }
+  to {
+    content: var(--percentage) "%";
+  }
+}
+
+/* Apply percentage values for count-up animation */
+.skill-item:nth-child(1) .percentage.animated::before {
+  content: "0%";
+  animation: count-up 1.5s ease-in-out forwards;
+  --percentage: 90;
+}
+.skill-item:nth-child(2) .percentage.animated::before {
+  content: "0%";
+  animation: count-up 1.5s ease-in-out forwards;
+  --percentage: 85;
+}
+.skill-item:nth-child(3) .percentage.animated::before {
+  content: "0%";
+  animation: count-up 1.5s ease-in-out forwards;
+  --percentage: 80;
+}
+.skill-item:nth-child(4) .percentage.animated::before {
+  content: "0%";
+  animation: count-up 1.5s ease-in-out forwards;
+  --percentage: 75;
+}
+.skill-item:nth-child(5) .percentage.animated::before {
+  content: "0%";
+  animation: count-up 1.5s ease-in-out forwards;
+  --percentage: 85;
+}
+.skill-item:nth-child(6) .percentage.animated::before {
+  content: "0%";
+  animation: count-up 1.5s ease-in-out forwards;
+  --percentage: 70;
+}
+
+/* For soft skills percentage animation */
+.skills-category-selector ~ .skills-container > .skills-grid:nth-child(2) .skill-item:nth-child(1) .percentage.animated::before {
+  --percentage: 90;
+}
+.skills-category-selector ~ .skills-container > .skills-grid:nth-child(2) .skill-item:nth-child(2) .percentage.animated::before {
+  --percentage: 95;
+}
+.skills-category-selector ~ .skills-container > .skills-grid:nth-child(2) .skill-item:nth-child(3) .percentage.animated::before {
+  --percentage: 80;
+}
+.skills-category-selector ~ .skills-container > .skills-grid:nth-child(2) .skill-item:nth-child(4) .percentage.animated::before {
+  --percentage: 85;
+}
+
+/* Hover effects */
+.skill-item:hover .circle-content {
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover .circle-content i {
+  transform: scale(1.1);
+}
+
+/* Pulse animation for active items */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(52, 152, 219, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+  }
+}
+
+.skill-item.animated .circle-content {
+  animation: pulse 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 30px;
+  }
+  
+  .circle-progress {
+    width: 110px;
+    height: 110px;
+  }
+  
+  .circle-content {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .circle-content i {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-category-selector {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .category-btn {
+    width: 200px;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .circle-progress {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .circle-content {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .circle-content i {
+    font-size: 1.6rem;
+  }
+  
+  .percentage {
+    font-size: 0.9rem;
+  }
+  
+  .skill-name {
+    font-size: 0.85rem;
+  }
+}
