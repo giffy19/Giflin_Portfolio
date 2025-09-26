@@ -41,6 +41,7 @@ nav ul li a:hover {
 }
 
 /* ---------- HERO SECTION ---------- */
+/* Existing Hero Styles */
 .hero {
   display: flex;
   align-items: center;
@@ -79,6 +80,9 @@ nav ul li a:hover {
 
 .hero .buttons {
   margin-top: 20px;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .hero .profile img {
@@ -91,6 +95,23 @@ nav ul li a:hover {
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
+}
+
+/* ===== MOBILE VIEW ===== */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;      /* stack content and image */
+    text-align: center;          /* center text */
+    padding: 60px 20px;
+  }
+
+  .hero .profile img {
+    margin-bottom: 20px;         /* space between image and buttons */
+  }
+
+  .hero .buttons {
+    justify-content: center;     /* center buttons under image */
+  }
 }
 
 /* ---------- ABOUT ---------- */

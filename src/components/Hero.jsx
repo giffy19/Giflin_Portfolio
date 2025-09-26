@@ -53,7 +53,7 @@ const Hero = () => {
             <a href="mailto:giflingodshia19@gmail.com" className="btn">📧 Mail Me</a>
             <a href="https://www.linkedin.com/in/giflin-godshia-889428258" target="_blank" rel="noopener noreferrer" className="btn">🔗 LinkedIn</a>
             <a href="https://github.com/giffy19" target="_blank" rel="noopener noreferrer" className="btn">💻 GitHub</a>
-            <a href="/resume.pdf" download className="btn">📄 Resume</a>
+            <a href="/GIFLIN_GODSHIA_DS.pdf" download className="btn">📄 Download Resume</a>
           </div>
         </div>
         <div className="hero-image">
