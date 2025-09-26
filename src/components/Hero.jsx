@@ -42,6 +42,12 @@ const Hero = () => {
   return (
     <section id="home" className="hero">
       <div className="hero-container">
+        {/* Profile Image */}
+        <div className="hero-image">
+          <img src="/pro.jpg" alt="Giflin Godshia" />
+        </div>
+
+        {/* Hero Content */}
         <div className="hero-content">
           <h1>Hello, I'm Giflin Godshia</h1>
           <div className="typing-container">
@@ -49,15 +55,14 @@ const Hero = () => {
             <span className="cursor">|</span>
           </div>
           <p>I turn ideas into delightful digital journeys. I specialize in frontend development and UI/UX design.</p>
+
+          {/* Buttons */}
           <div className="hero-buttons">
             <a href="mailto:giflingodshia19@gmail.com" className="btn">📧 Mail Me</a>
             <a href="https://www.linkedin.com/in/giflin-godshia-889428258" target="_blank" rel="noopener noreferrer" className="btn">🔗 LinkedIn</a>
             <a href="https://github.com/giffy19" target="_blank" rel="noopener noreferrer" className="btn">💻 GitHub</a>
-            <a href="GIFLIN_GODSHIA_DS.pdf" download className="btn">📄 Download Resume</a>
+            <a href="/GIFLIN_GODSHIA_DS.pdf" download className="btn">📄 Download Resume</a>
           </div>
-        </div>
-        <div className="hero-image">
-          <img src="pro.jpg" alt="Giflin Godshia" />
         </div>
       </div>
     </section>
