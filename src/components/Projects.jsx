@@ -11,7 +11,7 @@ const Projects = () => {
         title: "Personal Portfolio Website – React",
         description: "A modern and interactive personal portfolio website built using React, showcasing projects, skills, experience, and achievements. The design focuses on responsive layouts, smooth navigation, and engaging UI components to provide an intuitive and visually appealing user experience.",
         image: "pf.png",
-        link: "https://example.com",
+        link: "https://giffy19.github.io/Giflin_Portfolio/",
         technologies: ["HTML", "CSS", "JavaScript", "React"]
       },
       {

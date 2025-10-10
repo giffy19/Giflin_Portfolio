@@ -44,7 +44,7 @@ const Hero = () => {
       <div className="hero-container">
         {/* Profile Image */}
         <div className="hero-image">
-          <img src="/pro.jpg" alt="Giflin Godshia" />
+          <img src="pro.jpg" alt="Giflin Godshia" />
         </div>
 
         {/* Hero Content */}
