@@ -1,0 +1,409 @@
+/* DesignPortfolio.css
+   Clean 2-Column Project Grid for Graphic Design section
+*/
+
+.design-portfolio {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.design-subtitle {
+  text-align: center;
+  color: #6c757d;
+  font-size: 1.05rem;
+  margin-bottom: 45px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Project Grid ────────────────────────────────── */
+.design-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.design-card {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.design-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+  border-color: #3498db;
+}
+
+/* ── Thumbnail & Collage ─────────────────────────── */
+.design-card-thumbnail {
+  position: relative;
+  height: 250px;
+  width: 100%;
+  overflow: hidden;
+  background: #e9ecef;
+}
+
+/* Single Image Thumbnail */
+.single-thumbnail {
+  height: 100%;
+  width: 100%;
+}
+
+.single-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+}
+
+/* 2-3 Image Collage */
+.collage-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 3px;
+  height: 100%;
+  width: 100%;
+}
+
+.collage-main {
+  height: 100%;
+  overflow: hidden;
+}
+
+.collage-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+}
+
+.collage-side {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.collage-side img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+/* Zoom effect on card hover */
+.design-card:hover .collage-main img,
+.design-card:hover .collage-side img,
+.design-card:hover .single-thumbnail img {
+  transform: scale(1.05);
+}
+
+/* Thumbnail Badge */
+.thumbnail-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(44, 62, 80, 0.85);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+/* Hover Hint Overlay */
+.thumbnail-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(44, 62, 80, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.thumbnail-overlay span {
+  background: #ffffff;
+  color: #2c3e50;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.design-card:hover .thumbnail-overlay {
+  opacity: 1;
+}
+
+/* ── Card Content ────────────────────────────────── */
+.design-card-content {
+  padding: 20px 24px;
+  flex-grow: 1;
+}
+
+.design-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.design-card-description {
+  font-size: 0.92rem;
+  color: #6c757d;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Lightbox / Modal ────────────────────────────── */
+.design-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.design-modal-container {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 920px;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Modal Header */
+.design-modal-header {
+  padding: 18px 24px;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.design-modal-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 4px 0;
+}
+
+.design-modal-desc {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+.design-modal-close {
+  background: #f1f3f5;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  color: #495057;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.design-modal-close:hover {
+  background: #e9ecef;
+  color: #e74c3c;
+}
+
+/* Modal Body / Viewer */
+.design-modal-body {
+  position: relative;
+  padding: 20px;
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.modal-image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-main-img {
+  max-width: 100%;
+  max-height: 55vh;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.modal-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.modal-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.modal-nav-prev {
+  left: 16px;
+}
+
+.modal-nav-next {
+  right: 16px;
+}
+
+/* Modal Footer */
+.design-modal-footer {
+  padding: 16px 24px;
+  background: #ffffff;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-caption-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-img-caption {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.modal-img-counter {
+  font-size: 0.85rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.modal-thumbnails-strip {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.modal-thumb-btn {
+  border: 2px solid transparent;
+  border-radius: 6px;
+  padding: 0;
+  overflow: hidden;
+  width: 64px;
+  height: 48px;
+  cursor: pointer;
+  background: none;
+  opacity: 0.5;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.modal-thumb-btn.active {
+  border-color: #3498db;
+  opacity: 1;
+}
+
+.modal-thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Responsive Breakpoints ──────────────────────── */
+@media (max-width: 768px) {
+  .design-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .design-card-thumbnail {
+    height: 220px;
+  }
+
+  .design-modal-container {
+    max-height: 95vh;
+  }
+
+  .modal-main-img {
+    max-height: 45vh;
+  }
+
+  .modal-nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.4rem;
+  }
+
+  .modal-nav-prev {
+    left: 10px;
+  }
+
+  .modal-nav-next {
+    right: 10px;
+  }
+}
