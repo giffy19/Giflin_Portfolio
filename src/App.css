@@ -175,20 +175,6 @@ html {
   animation: fadeInUp 1.5s ease;
 }
 
-.hero-role-badge {
-  display: inline-block;
-  font-size: 1rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 30px;
-  padding: 6px 18px;
-  margin-bottom: 10px;
-  backdrop-filter: blur(8px);
-  animation: fadeInUp 0.8s ease;
-}
-
 .hero-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -196,7 +182,11 @@ html {
   animation: fadeInUp 2s ease;
 }
 
-.btn {
+.btn,
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   padding: 12px 25px;
   background: rgba(255, 255, 255, 0.2);
   color: white;
@@ -208,7 +198,8 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.btn:hover {
+.btn:hover,
+.hero-button:hover {
   background: rgba(255, 255, 255, 0.3);
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
