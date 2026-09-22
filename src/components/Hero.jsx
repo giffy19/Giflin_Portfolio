@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { FaFileAlt } from 'react-icons/fa';
 
 const Hero = () => {
   useEffect(() => {
@@ -50,7 +51,6 @@ const Hero = () => {
         {/* Hero Content */}
         <div className="hero-content">
           <h1>Hello, I'm Giflin Godshia</h1>
-          <p className="hero-role-badge">Graphic Designer &amp; Frontend Developer</p>
           <div className="typing-container">
             <span id="typed-text"></span>
             <span className="cursor">|</span>
@@ -62,7 +62,15 @@ const Hero = () => {
             <a href="mailto:giflingodshia19@gmail.com" className="btn">📧 Mail Me</a>
             <a href="https://www.linkedin.com/in/giflin-godshia-889428258" target="_blank" rel="noopener noreferrer" className="btn">🔗 LinkedIn</a>
             <a href="https://github.com/giffy19" target="_blank" rel="noopener noreferrer" className="btn">💻 GitHub</a>
-            <a href="/GIFLIN_GODSHIA_DS.pdf" download className="btn">📄 Download Resume</a>
+            <a
+              href="/GIFLIN_GODSHIA_DS.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-button"
+            >
+              <FaFileAlt className="button-icon" />
+              <span>Resume</span>
+            </a>
           </div>
         </div>
       </div>
